@@ -1,0 +1,13 @@
+{
+  "name": "chain-reaction-harness",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Determinism harness for the Chain Reaction physics sim. Run before trusting the architecture.",
+  "scripts": {
+    "test": "node index.mjs"
+  },
+  "dependencies": {
+    "matter-js": "^0.20.0"
+  }
+}
