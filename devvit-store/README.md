@@ -83,7 +83,7 @@ Screenshots include the dev preview's mode-switch strip (~35 px top); recrop to 
 
 ## Submission checklist
 
-- [ ] Hero image 1200×630 (needs creation)
+- [x] Hero image 1200×630
 - [x] App icon at `assets/icon.png` (verify 256×256+)
 - [x] Screenshots: 5 supplied (recrop)
 - [ ] Submit short description

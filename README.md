@@ -37,16 +37,16 @@ When the post locks, a deterministic physics simulation plays back the contrapti
 
 ```sh
 npm install
-npm run check                # type-check + determinism harness
-npm run preview              # local mock — http://127.0.0.1:5173
-npm run dev r/your_test_sub  # live playtest on Reddit
+npm run check             # type-check + determinism harness
+npm run preview           # local mock — http://127.0.0.1:5173
+npm run dev r/ChainReaction  # live playtest on Reddit
 ```
 
 Deploy:
 
 ```sh
 npm run deploy
-npx devvit install r/your_test_sub
+npx devvit install r/ChainReaction
 ```
 
 ## How it works
