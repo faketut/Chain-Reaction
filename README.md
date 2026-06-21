@@ -13,7 +13,7 @@ A daily co-op physics puzzle on Reddit. One piece per player. One solve per day.
 [![Node](https://img.shields.io/badge/Node-≥22.2-339933?logo=node.js&logoColor=white)](https://nodejs.org)
 [![License](https://img.shields.io/badge/License-BSD--3--Clause-555)](#license)
 
-[Play](https://www.reddit.com/r/chainreaction_test/) · [Design](docs/design.md) · [Preview](preview/README.md) · [Harness](harness/README.md)
+[Play](https://www.reddit.com/r/ChainReaction/) · [Design](docs/design.md) · [Preview](preview/README.md) · [Harness](harness/README.md)
 
 </div>
 

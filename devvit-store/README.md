@@ -89,4 +89,4 @@ Screenshots include the dev preview's mode-switch strip (~35 px top); recrop to 
 - [ ] Submit short description
 - [ ] Submit long description
 - [ ] Category: Games › Puzzle
-- [ ] Demo URL: <https://www.reddit.com/r/chainreaction_test/>
+- [ ] Demo URL: <https://www.reddit.com/r/ChainReaction/>
