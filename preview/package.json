@@ -1,0 +1,21 @@
+{
+  "name": "chain-reaction-preview",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Local preview of the Chain Reaction client. Mocks the /api/* endpoints so PlayScene and ReplayScene can be run without the Devvit dev loop.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "matter-js": "^0.20.0",
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "@types/matter-js": "^0.19.6",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  }
+}
