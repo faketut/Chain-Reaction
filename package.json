@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "chainreaction-fj",
+  "version": "0.0.0",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "deploy": "npm run type-check && devvit upload",
+    "dev": "devvit playtest",
+    "launch": "npm run deploy && devvit publish",
+    "login": "devvit login",
+    "type-check": "tsc --build",
+    "harness": "cd harness && npm test",
+    "preview": "cd preview && npm run dev",
+    "check": "npm run type-check && npm run harness"
+  },
+  "engines": {
+    "node": ">=22.2.0"
+  },
+  "dependencies": {
+    "@devvit/start": "0.12.24",
+    "@devvit/web": "0.12.24",
+    "@hono/node-server": "2.0.3",
+    "devvit": "0.12.24",
+    "hono": "4.12.21",
+    "matter-js": "0.20.0",
+    "phaser": "4.1.0"
+  },
+  "devDependencies": {
+    "@types/matter-js": "0.19.8",
+    "@types/node": "^22.19.19",
+    "typescript": "6.0.3",
+    "vite": "8.0.13"
+  }
+}

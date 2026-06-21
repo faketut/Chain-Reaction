@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "chainreaction-fj",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": {
+        "entry": "game.html",
+        "height": "tall"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "permissions": {
+    "reddit": {
+      "enable": true,
+      "asUser": [
+        "SUBMIT_POST"
+      ]
+    },
+    "redis": true
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Chain Reaction: create today's post",
+        "description": "Manually create the daily Chain Reaction puzzle post",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/post-create"
+      }
+    ]
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/on-app-install"
+  },
+  "scheduler": {
+    "tasks": {
+      "daily-create-post": {
+        "endpoint": "/internal/cron/daily-create-post",
+        "cron": "0 14 * * *"
+      },
+      "nightly-lock": {
+        "endpoint": "/internal/cron/nightly-lock",
+        "cron": "55 7 * * *"
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  }
+}
