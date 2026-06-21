@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Chain Reaction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <aside class="frame frame-left" aria-hidden="true">
+        <div class="masthead">
+          <p class="masthead-kicker">Vol. I — Daily Edition</p>
+          <h1 class="masthead-title"><span>Chain</span><span>Reaction</span></h1>
+          <div class="rule"></div>
+          <p class="masthead-tagline">A co-op physics puzzle. One piece per player, one solve per day.</p>
+        </div>
+        <div class="frame-spacer"></div>
+        <p class="frame-byline">— published in r/chainreaction —</p>
+      </aside>
+      <div id="game"></div>
+      <aside class="frame frame-right" aria-hidden="true">
+        <h2 class="frame-h">How to play</h2>
+        <ol class="frame-steps">
+          <li><span class="num">01</span><span>Pick a piece from the tray.</span></li>
+          <li><span class="num">02</span><span>Drop it anywhere on the page.</span></li>
+          <li><span class="num">03</span><span>Press <kbd>▶</kbd> and hope.</span></li>
+        </ol>
+        <div class="rule"></div>
+        <h2 class="frame-h">House rules</h2>
+        <ul class="frame-rules">
+          <li>One placement per redditor.</li>
+          <li>Locks at <span class="num">07:55 UTC</span>.</li>
+          <li>MVP gets the cleanup credit.</li>
+        </ul>
+        <div class="frame-spacer"></div>
+        <p class="frame-byline">— good chains, soft landings —</p>
+      </aside>
+      <noscript>This game requires JavaScript.</noscript>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
