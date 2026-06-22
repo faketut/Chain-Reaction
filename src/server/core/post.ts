@@ -117,6 +117,48 @@ export async function lockPost(postId: string): Promise<boolean> {
   for (const u of influentialUserIds) {
     try { await creditInfluential(u); } catch (e) { console.error('creditInfluential failed', e); }
   }
+
+  // ---------- stickied "verdict" comment ----------
+  // Post a single mod-stickied comment naming the MVP and the contributor
+  // count so the comment thread has a focal point for discussion.
+  try {
+    await postVerdictComment(postId, {
+      solved: baseline.solved,
+      mvpUserId,
+      contributorCount: new Set(placements.map((p) => p.userId)).size,
+    });
+  } catch (e) {
+    console.error('postVerdictComment failed', e);
+  }
+
   return true;
+}
+
+async function postVerdictComment(
+  postId: string,
+  v: { solved: boolean; mvpUserId: string | null; contributorCount: number },
+): Promise<void> {
+  let mvpHandle = '';
+  if (v.mvpUserId) {
+    try {
+      const user = await reddit.getUserById(v.mvpUserId as `t2_${string}`);
+      if (user?.username) mvpHandle = `u/${user.username}`;
+    } catch { /* fall through to anonymous credit */ }
+  }
+
+  const lines: string[] = [];
+  if (v.solved) {
+    lines.push("**Solved!** The chain reaction reached the goal.");
+    if (mvpHandle) lines.push(`MVP: ${mvpHandle} — their placement was load-bearing.`);
+    else if (v.mvpUserId) lines.push("MVP credited (user could not be resolved).");
+  } else {
+    lines.push("**Not solved this time** — the ball never reached the goal.");
+  }
+  lines.push(`Built by **${v.contributorCount}** contributor${v.contributorCount === 1 ? '' : 's'}.`);
+  lines.push('');
+  lines.push("Tomorrow's puzzle drops at 14:00 UTC. One piece per player — make it count.");
+
+  const comment = await reddit.submitComment({ id: postId as `t3_${string}`, text: lines.join('\n\n') });
+  try { await comment.distinguish(true); } catch (e) { console.error('distinguish failed', e); }
 }
 

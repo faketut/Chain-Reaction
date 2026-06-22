@@ -36,4 +36,4 @@ Append a URL fragment to switch into a scenario:
 
 ## When to use it
 
-For Phaser scene work, tweens, visual tokens, and reproducing bugs without burning a daily playtest. For anything touching Devvit auth, scheduler, or real Redis, use `npm run dev r/your_test_sub` instead.
+For Phaser scene work, tweens, visual tokens, and reproducing bugs without burning a daily playtest. For anything touching Devvit auth, scheduler, or real Redis, use `npm run dev r/ChainReaction` instead.
